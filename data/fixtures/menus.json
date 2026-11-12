@@ -1,0 +1,11 @@
+{
+  "menu_id":"aurelia-breakfast-demo",
+  "fictional":true,
+  "service_hours":{"breakfast":"06:30-11:00","overnight":"unavailable"},
+  "items":[
+    {"id":"waffles","name":"Belgian waffles","price":28.00,"currency":"USD","available":true,"allergens":["wheat","egg","dairy"]},
+    {"id":"raspberries","name":"Fresh raspberries","price":6.00,"currency":"USD","available":true},
+    {"id":"peach-cream","name":"Peach cream","price":4.00,"currency":"USD","available":true},
+    {"id":"coke-zero","name":"Coca-Cola Zero","price":6.00,"currency":"USD","available":true}
+  ]
+}

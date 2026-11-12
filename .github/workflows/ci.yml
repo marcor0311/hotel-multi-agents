@@ -1,0 +1,17 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: uv sync --project apps/concierge-api --extra dev
+      - run: uv run --project apps/concierge-api ruff check apps/concierge-api/src apps/concierge-api/tests
+      - run: uv run --project apps/concierge-api mypy apps/concierge-api/src
+      - run: uv run --project apps/concierge-api pytest apps/concierge-api/tests

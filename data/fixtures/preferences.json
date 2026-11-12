@@ -1,0 +1,5 @@
+[
+  {"guest_id":"00000000-0000-4000-8000-000000000101","consented":true,"preferences":{"breakfast":{"items":["waffles","raspberries","peach cream on the side","Coca-Cola Zero"],"usual_delivery_time":"07:00"}},"fictional":true},
+  {"guest_id":"00000000-0000-4000-8000-000000000102","consented":false,"preferences":{},"fictional":true},
+  {"guest_id":"00000000-0000-4000-8000-000000000103","consented":false,"preferences":{},"fictional":true}
+]

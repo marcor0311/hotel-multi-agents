@@ -1,0 +1,13 @@
+stateDiagram-v2
+  [*] --> Received
+  Received --> InScope: autorizado y soportado
+  Received --> EscalationRequested: fuera de alcance / delicado
+  InScope --> NeedsConfirmation: efecto sensible
+  NeedsConfirmation --> InScope: huésped confirma
+  NeedsConfirmation --> Cancelled: huésped declina
+  EscalationRequested --> ReceptionPending: registrar solicitud
+  ReceptionPending --> ReceptionAccepted: integración futura confirma
+  ReceptionPending --> InstructionsProvided: sin transferencia disponible
+  ReceptionAccepted --> [*]
+  InstructionsProvided --> [*]
+  Cancelled --> [*]

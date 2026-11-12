@@ -1,0 +1,32 @@
+flowchart LR
+  subgraph API[apps/concierge-api]
+    Channels[channels]
+    HTTP[api]
+    Agents[agents]
+    Domain[models / services]
+    Ports[integrations ports]
+    Security[security]
+    Channels --> HTTP --> Agents --> Domain --> Ports
+    Security --> HTTP
+  end
+  subgraph ModularServices[services: límites lógicos, no despliegues obligatorios]
+    Hotel[hotel-mcp]
+    Housekeeping[housekeeping-mcp]
+    RoomService[room-service-mcp]
+    Robots[robot-delivery-mcp]
+    Flights[flights-mcp]
+    Payments[payments-mcp]
+    Transport[transportation-mcp]
+    Folio[folio-mcp]
+    Provider[security-provider-a2a]
+  end
+  Ports --> Hotel
+  Ports --> Housekeeping
+  Ports --> RoomService
+  Ports --> Robots
+  Ports --> Flights
+  Ports --> Payments
+  Ports --> Transport
+  Ports --> Folio
+  Ports -. A2A .-> Provider
+  Domain --> Fixtures[data/fixtures]

@@ -1,0 +1,10 @@
+{
+  "organization_id":"demo-security-partner",
+  "organization_name":"Westline Protective Services (fictitious)",
+  "fictional":true,
+  "agent_card":{"url":"https://security-provider.example.invalid/.well-known/agent-card.json","protocol_version":"pending-selection","skills":["request_quote","check_availability","create_booking"],"authentication":{"scheme":"demo-only; production scheme pending"}},
+  "endpoint":"https://security-provider.example.invalid/a2a",
+  "availability":"simulated",
+  "quotes":[{"service":"executive_escort","duration_hours":2,"amount":485.00,"currency":"USD","available":true,"simulated":true}],
+  "note":"Fictional fixture; endpoint is intentionally non-routable and must never be contacted."
+}

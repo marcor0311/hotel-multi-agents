@@ -1,0 +1,22 @@
+{
+  "id": "hotel-pacific-luminara",
+  "name": "The Pacific Luminara",
+  "fictional": true,
+  "description": "Hotel ficticio de lujo en Los Ángeles para demostración del concierge.",
+  "location": {"city": "Los Angeles", "region": "California", "country": "US", "area": "Westside"},
+  "timezone": "America/Los_Angeles",
+  "facilities": [
+    {"id":"restaurant-main","name":"Aurelia Dining Room","hours":{"daily":"06:30-22:00"},"services":["breakfast","lunch","dinner"]},
+    {"id":"pool-rooftop","name":"Rooftop Pool","hours":{"daily":"07:00-21:00"},"after_hours_restriction":"Closed overnight"},
+    {"id":"fitness","name":"Fitness Studio","hours":{"daily":"05:00-23:00"}},
+    {"id":"spa","name":"Luminara Spa","hours":{"daily":"09:00-20:00"}},
+    {"id":"front-desk","name":"Front Desk","hours":{"daily":"24 hours"}}
+  ],
+  "policies": {
+    "overnight_general_housekeeping": false,
+    "overnight_supply_requests": true,
+    "active_stay_required": true,
+    "availability_source": "hotel-managed structured catalog",
+    "fictional_demo_only": true
+  }
+}

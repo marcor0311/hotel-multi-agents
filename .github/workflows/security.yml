@@ -1,0 +1,17 @@
+name: Dependency and secret checks
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "23 7 * * 1"
+jobs:
+  dependency-review:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/dependency-review-action@v4
+  secret-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: gitleaks/gitleaks-action@v2
