@@ -32,6 +32,15 @@ MCP expone herramientas deterministas y recursos que el concierge puede invocar 
 
 Información y políticas del hotel; contexto de estancia; suministros nocturnos e intercambio validado por sensores; room service y robots simulados; búsqueda y reservas ficticias de vuelos desde LAX; pagos solo de prueba; transporte ejecutivo con reglas deterministas; colaboración A2A de seguridad; folios y notificaciones consentidas; escalamiento humano. La personalización proactiva queda documentada para una fase futura.
 
+## Agentes
+
+- **Concierge Agent:** Mantiene la conversación con el huésped, carga únicamente el contexto autorizado y coordina herramientas, agentes especializados, confirmaciones y escalamiento.
+- **Personal Trainer Booking Agent (prioridad 1):** Consulta el directorio y las tarifas, llama a entrenadores registrados dentro del horario permitido hasta hallar disponibilidad, presenta la opción para aprobación del huésped y coordina una reserva y un pago simulados, sin usar WhatsApp ni correo para contactarlos.
+- **Travel Planning Agent (prioridad 2):** Coordina consultas y comparaciones de vuelos, conexiones y transporte según horario, presupuesto y preferencias, propone alternativas ante conflictos y utiliza herramientas MCP para consultas y reservas simuladas.
+- **Security Provider Agent (externo vía A2A):** Proveedor ficticio independiente que expone capacidades, disponibilidad, cotizaciones y reservas simuladas mediante A2A con autenticación y verificación del endpoint.
+
+Los agentes especializados comparten solo el contexto necesario, y ninguno confirma un servicio de pago sin autorización explícita del huésped; esta sección documenta contratos y responsabilidades, no lógica funcional.
+
 ## Tecnologías y estructura
 
 Python 3.12+, FastAPI, Pydantic 2, SQLAlchemy 2, LangGraph, SDK oficial MCP Python, PostgreSQL futuro, Docker Compose y `uv`. No se fija todavía SDK A2A ni proveedor comercial: se decidirán contra la especificación y necesidades de autenticación al implementar esa integración. Los servicios MCP son módulos del monorepo, no despliegues independientes por defecto.
