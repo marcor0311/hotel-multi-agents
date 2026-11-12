@@ -1,0 +1,7 @@
+[
+  {"id":"towel-bath","name":"Bath towel","quantity_available":30,"exchange_required":true,"unit":"each","fictional":true},
+  {"id":"robe","name":"Bath robe","quantity_available":8,"exchange_required":true,"unit":"each","fictional":true},
+  {"id":"toilet-paper","name":"Toilet paper","quantity_available":40,"exchange_required":false,"unit":"roll","fictional":true},
+  {"id":"pillow","name":"Pillow","quantity_available":12,"exchange_required":false,"unit":"each","fictional":true},
+  {"id":"toiletry-kit","name":"Personal care kit","quantity_available":18,"exchange_required":false,"unit":"kit","fictional":true}
+]

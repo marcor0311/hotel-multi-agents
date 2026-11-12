@@ -1,0 +1,5 @@
+[
+  {"id":"driver-01","name":"Elena Marlowe","languages":["English","Spanish"],"shift_starts_at":"2026-11-12T06:00:00-08:00","shift_ends_at":"2026-11-12T18:00:00-08:00","authorized_vehicle_ids":["veh-sclass-01","veh-a8-03"],"fictional":true},
+  {"id":"driver-02","name":"Marcus Ellery","languages":["English"],"shift_starts_at":"2026-11-12T14:00:00-08:00","shift_ends_at":"2026-11-13T02:00:00-08:00","authorized_vehicle_ids":["veh-bmw7-02","veh-escalade-04"],"fictional":true},
+  {"id":"driver-03","name":"Sofia Chen","languages":["English","Mandarin"],"shift_starts_at":"2026-11-12T08:00:00-08:00","shift_ends_at":"2026-11-12T20:00:00-08:00","authorized_vehicle_ids":["veh-escalade-04"],"fictional":true}
+]

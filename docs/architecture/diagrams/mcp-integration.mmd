@@ -1,0 +1,11 @@
+sequenceDiagram
+  participant O as Concierge/orquestación
+  participant G as Gateway/cliente MCP futuro
+  participant S as Servidor MCP modular
+  participant D as Dominio y política
+  O->>G: herramienta + argumentos validados
+  G->>S: llamada MCP autenticada
+  S->>D: caso de uso determinista
+  D-->>S: resultado o error tipado
+  S-->>G: contenido estructurado
+  G-->>O: resultado no confiable a validar

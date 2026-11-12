@@ -1,0 +1,5 @@
+[
+  {"id":"robot-supply-01","type":"supply_delivery","capabilities":["room_delivery","item_return"],"status":"available","max_load_kg":18,"compartments":2,"location_simulated":"service-floor-12","battery_percent":91,"fictional":true},
+  {"id":"robot-food-02","type":"food_delivery","capabilities":["room_delivery","sealed_food_compartment"],"status":"busy","max_load_kg":12,"compartments":1,"location_simulated":"restaurant-lobby","battery_percent":64,"fictional":true},
+  {"id":"robot-supply-03","type":"supply_delivery","capabilities":["room_delivery"],"status":"out_of_service","max_load_kg":15,"compartments":2,"location_simulated":"maintenance-bay","battery_percent":22,"fictional":true}
+]

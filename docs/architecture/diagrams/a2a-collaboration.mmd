@@ -1,0 +1,14 @@
+sequenceDiagram
+  actor Guest as Huésped
+  participant C as Concierge
+  participant Trust as Registro/verificador de proveedor
+  participant A as Agente proveedor A2A
+  Guest->>C: Solicita escolta
+  C->>Trust: Resolver proveedor permitido y credenciales
+  Trust-->>C: Identidad/endpoint verificados
+  C->>A: Solicitud mínima con referencia opaca
+  A-->>C: Cotización y disponibilidad
+  C-->>Guest: Presenta oferta simulada
+  Guest->>C: Autoriza explícitamente
+  C->>A: Confirmar servicio (tras autorización de pago)
+  A-->>C: Estado de confirmación

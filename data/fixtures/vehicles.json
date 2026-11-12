@@ -1,0 +1,6 @@
+[
+  {"id":"veh-sclass-01","make":"Mercedes-Benz","model":"S-Class","category":"executive_sedan","capacity":3,"rate_per_hour":185.00,"currency":"USD","status":"available","fictional":true},
+  {"id":"veh-bmw7-02","make":"BMW","model":"7 Series","category":"executive_sedan","capacity":3,"rate_per_hour":175.00,"currency":"USD","status":"reserved","fictional":true},
+  {"id":"veh-a8-03","make":"Audi","model":"A8","category":"executive_sedan","capacity":3,"rate_per_hour":170.00,"currency":"USD","status":"available","fictional":true},
+  {"id":"veh-escalade-04","make":"Cadillac","model":"Escalade","category":"luxury_suv","capacity":6,"rate_per_hour":220.00,"currency":"USD","status":"available","fictional":true}
+]

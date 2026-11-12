@@ -1,0 +1,19 @@
+sequenceDiagram
+  actor Guest as Huésped
+  participant Channel as Canal
+  participant Concierge as Concierge
+  participant Stay as Contexto/permiso
+  participant Tool as Herramienta
+  participant Desk as Recepción
+  Guest->>Channel: Solicitud
+  Channel->>Concierge: Entrada normalizada
+  Concierge->>Stay: Resolver estancia activa y permiso
+  Stay-->>Concierge: Resultado
+  alt autorizado y disponible
+    Concierge->>Tool: Operación tipada
+    Tool-->>Concierge: Resultado
+  else sensible, fuera de alcance o no disponible
+    Concierge->>Desk: Registrar escalamiento
+  end
+  Concierge-->>Channel: Respuesta clara
+  Channel-->>Guest: Mismo canal
