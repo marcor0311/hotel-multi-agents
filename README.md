@@ -4,7 +4,7 @@ Un concierge agéntico para un hotel ficticio de cinco estrellas en Los Ángeles
 
 ## Problema
 
-Los huéspedes necesitan coordinar servicios del hotel y solicitudes complejas sin repetir su contexto ni contactar a varios proveedores por separado. El concierge mantiene la conversación, comparte solo la información necesaria y coordina agentes especializados; los servicios de pago requieren aprobación explícita del huésped.
+Como huésped de un hotel de alto prestigio, quiero acceder a los servicios que ofrece el hotel de forma cómoda, rápida y sencilla, sin tener que averiguar a quién contactar ni repetir mi solicitud. El hotel busca facilitar ese acceso y coordinar con agilidad tareas operativas repetitivas que son importantes para la experiencia del huésped, especialmente fuera del horario habitual. El objetivo es complementar al equipo del hotel, no reemplazarlo: el personal sigue aportando criterio, atención humana y aprobación en los servicios que la requieren.
 
 ## Agentes
 
