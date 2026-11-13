@@ -15,9 +15,8 @@ Los huéspedes necesitan coordinar servicios del hotel y solicitudes complejas s
 - **Uber / Executive Transportation Agent:** Consulta disponibilidad y coordina transporte ejecutivo simulado como capacidad de apoyo al Travel Planning Agent.
 - **Stripe Payments Agent:** Coordina pagos de prueba mediante Stripe Test Mode y solo los confirma tras la autorización explícita del huésped.
 - **Security Provider Agent (externo):** Representa al proveedor ficticio e independiente de seguridad, con el que el concierge colabora mediante A2A después de verificar el endpoint y la autenticación.
-- **Hotel Information Agent:** Responde preguntas sobre instalaciones, políticas y servicios a partir de información estructurada del hotel.
+- **Hotel Information Agent:** Responde preguntas sobre instalaciones, políticas, servicios y horarios y disponibilidad de limpieza general a partir de información estructurada del hotel.
 - **Guest Supplies Agent:** Gestiona solicitudes permitidas de suministros y comprueba el inventario disponible.
-- **Housekeeping Agent:** Informa sobre los horarios y disponibilidad de limpieza general, sin prometer servicio fuera del horario permitido.
 - **Room Service Agent:** Consulta el menú, registra pedidos simulados y comunica su estado según el horario del servicio.
 - **Robot Delivery Agent:** Coordina entregas e intercambios simulados sujetos a disponibilidad del robot y validaciones de seguridad.
 - **Guest Folio Agent:** Consulta el saldo y los movimientos del folio y distingue cargos confirmados de pendientes.
