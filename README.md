@@ -17,6 +17,9 @@ Los huéspedes necesitan coordinar servicios del hotel y solicitudes complejas s
 - **Hotel Information Agent:** Responde preguntas sobre instalaciones, políticas, servicios y horarios y disponibilidad de limpieza general a partir de información estructurada del hotel.
 - **Guest Supplies Agent:** Gestiona solicitudes permitidas de suministros y comprueba el inventario disponible.
 - **Room Service Agent:** Consulta el menú, registra pedidos simulados y comunica su estado según el horario del servicio.
+- **Dining & Reservations Agent:** Consulta la red de restaurantes del hotel, coordina preferencias y disponibilidad y prepara solicitudes de reserva, que requieren aprobación humana antes de confirmarse.
+- **Wellness & Spa Agent:** Consulta tratamientos, profesionales y horarios disponibles, y coordina solicitudes de bienestar que requieren aprobación humana antes de confirmarse.
+- **Local Guide Agent:** Consulta la red curada por el hotel de restaurantes, actividades y lugares turísticos recomendados, incluyendo descuentos disponibles, y prepara opciones para el huésped.
 - **Robot Delivery Agent:** Coordina entregas e intercambios simulados sujetos a disponibilidad del robot y validaciones de seguridad.
 - **Guest Folio Agent:** Consulta el saldo y los movimientos del folio y distingue cargos confirmados de pendientes.
 - **Human Handoff Agent:** Transfiere solicitudes que requieren asistencia de recepción y comunica con claridad si el traspaso se completó.
