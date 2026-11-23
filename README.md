@@ -8,20 +8,39 @@ Como huésped de un hotel de alto prestigio, quiero acceder a los servicios que 
 
 ## Agentes
 
-- **Concierge Agent:** Es el punto de contacto del huésped y coordina el contexto autorizado, los agentes especializados, las capacidades del hotel, las aprobaciones y el escalamiento a recepción.
-- **Personal Trainer Booking Agent (prioridad 1):** Busca entrenadores registrados según especialidad, tarifa y preferencias, los llama dentro del horario permitido hasta encontrar disponibilidad y presenta la opción al huésped para aprobación antes de registrar una reserva y un pago simulados; solo puede contactarlos por teléfono, nunca por WhatsApp ni correo.
-- **Flights Agent:** Busca y compara vuelos e itinerarios según horarios, presupuesto y preferencias, propone alternativas ante conflictos y gestiona reservas simuladas.
-- **Uber / Executive Transportation Agent:** Consulta disponibilidad y coordina transporte ejecutivo simulado.
-- **Stripe Payments Agent:** Coordina pagos de prueba mediante Stripe Test Mode y solo los confirma tras la autorización explícita del huésped.
-- **Security Provider Agent (externo):** Representa al proveedor ficticio e independiente de seguridad, con el que el concierge colabora mediante A2A después de verificar el endpoint y la autenticación.
-- **Hotel Information Agent:** Responde preguntas sobre instalaciones, políticas, servicios y horarios y disponibilidad de limpieza general a partir de información estructurada del hotel.
-- **Guest Supplies Agent:** Gestiona solicitudes permitidas de suministros y comprueba el inventario disponible.
-- **Room Service Agent:** Consulta el menú, registra pedidos simulados y comunica su estado según el horario del servicio.
-- **Dining & Reservations Agent:** Consulta la red de restaurantes del hotel, coordina preferencias y disponibilidad y prepara solicitudes de reserva, que requieren aprobación humana antes de confirmarse.
-- **Wellness & Spa Agent:** Consulta tratamientos, profesionales y horarios disponibles, y coordina solicitudes de bienestar que requieren aprobación humana antes de confirmarse.
-- **Local Guide Agent:** Consulta la red curada por el hotel de restaurantes, actividades y lugares turísticos recomendados, incluyendo descuentos disponibles, y prepara opciones para el huésped.
-- **Robot Delivery Agent:** Coordina entregas e intercambios simulados sujetos a disponibilidad del robot y validaciones de seguridad.
-- **Guest Folio Agent:** Consulta el saldo y los movimientos del folio y distingue cargos confirmados de pendientes.
-- **Human Handoff Agent:** Transfiere solicitudes que requieren asistencia de recepción y comunica con claridad si el traspaso se completó.
+El **Concierge Agent** es el único punto de contacto del huésped por voz o chat. Verifica el contexto de la estancia, delega la solicitud al especialista adecuado y comunica el resultado o pide la confirmación necesaria.
 
-Estos agentes y capacidades comparten únicamente el contexto necesario y son coordinados por el Concierge Agent; los pagos requieren aprobación explícita del huésped. Los módulos MCP proporcionan herramientas deterministas y no representan agentes autónomos. Este README documenta responsabilidades previstas, no lógica funcional.
+![Arquitectura de los agentes. El Concierge Agent recibe las solicitudes del huésped y coordina los agentes internos, las herramientas MCP, recepción y el proveedor externo de seguridad mediante A2A.](docs/architecture/diagrams/agent-architecture.svg)
+
+### Viajes y destinos
+
+- **Flights Agent** busca y compara vuelos, gestiona reservas con confirmación explícita del huésped y rastrea vuelos reservados por el hotel o compartidos por el huésped.
+- **Uber / Executive Transportation Agent** consulta disponibilidad y coordina transporte ejecutivo simulado.
+- **Local Guide Agent** prepara recomendaciones de restaurantes, actividades y sitios turísticos seleccionados por el hotel, con descuentos cuando estén disponibles.
+
+### Experiencias
+
+- **Personal Trainer Booking Agent** busca entrenadores registrados por especialidad, tarifa y preferencias y los contacta exclusivamente por teléfono dentro del horario permitido hasta encontrar disponibilidad. Devuelve la opción al concierge y, tras la aprobación del huésped, registra la reserva y el pago simulados.
+- **Dining & Reservations Agent** cruza preferencias y disponibilidad en la red de restaurantes del hotel. Prepara solicitudes de reserva que requieren aprobación humana.
+- **Wellness & Spa Agent** consulta tratamientos, profesionales y horarios. Coordina solicitudes de bienestar que requieren aprobación humana.
+
+### Servicios del hotel
+
+- **Hotel Information Agent** consulta información estructurada sobre instalaciones, políticas, servicios y horarios y disponibilidad de limpieza general.
+- **Guest Supplies Agent** verifica inventario y gestiona solicitudes permitidas de suministros.
+- **Room Service Agent** consulta el menú, registra pedidos simulados y devuelve su estado según el horario del servicio.
+- **Robot Delivery Agent** coordina entregas e intercambios simulados según la disponibilidad del robot y las validaciones de seguridad.
+
+### Cuentas y asistencia
+
+- **Stripe Payments Agent** coordina pagos en Stripe Test Mode y exige autorización explícita del huésped.
+- **Guest Folio Agent** consulta el saldo y los movimientos de la estancia y distingue cargos confirmados de pendientes.
+- **Human Handoff Agent** deriva solicitudes a recepción y devuelve al concierge el estado del traspaso.
+
+### Herramientas y conexiones externas
+
+- **Herramientas MCP.** Exponen operaciones del hotel, como consultar inventario o folios. El concierge y los especialistas pueden invocar las herramientas autorizadas para su tarea.
+- **Security Provider Agent.** Es el agente del proveedor ficticio e independiente de seguridad. El concierge se comunica con él por A2A después de verificar el endpoint y la autenticación.
+- **Recepción.** El equipo del hotel atiende solicitudes escaladas y conserva las decisiones que requieren intervención humana.
+
+La Fase 0 contiene la base de la API y su health check. La [guía de arquitectura](docs/architecture/overview.md) explica cómo se conectarán estos componentes y dónde se aplicarán los permisos y las aprobaciones.

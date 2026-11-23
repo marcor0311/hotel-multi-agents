@@ -1,7 +1,7 @@
 # Documentación
 
 - [Alcance de producto](business/scope.md)
-- [Arquitectura](architecture/overview.md)
+- [Arquitectura del concierge y flujo de solicitudes](architecture/overview.md)
 - [Diagramas](architecture/diagrams/)
 - [Catálogo de servicios](business/service-catalog.md)
 - [Política after-hours](business/after-hours.md)
