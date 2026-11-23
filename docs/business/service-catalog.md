@@ -7,7 +7,7 @@
 | Limpieza general | No disponible en la noche | No | Recepción informa horario |
 | Room service | Menú, pedido y estado | Según horario configurado | Fixture |
 | Robots | Entrega e intercambio controlado | Según disponibilidad | Simulado |
-| Vuelos | Buscar/comparar/reserva simulada | Sí | Proveedor por seleccionar |
+| Vuelos | Reservar vuelos nuevos con confirmación del huésped y rastrear vuelos agendados por el hotel o compartidos por el huésped | Sí | Fase 0 simulada, proveedores por seleccionar |
 | Transporte | Reserva simulada y disponibilidad | Sí | Flota ficticia |
 | Seguridad privada | Cotización por proveedor independiente | Según proveedor | A2A simulado |
 | Folio | Consultar saldo y movimientos | Sí | Fixture |

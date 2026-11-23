@@ -1,11 +1,11 @@
 # Diseño agéntico
 
-El agente principal tiene identidad única y responsabilidad de conversación. El modelo interpreta solo lo necesario; autorización, disponibilidad, horarios, cálculo de tarifas, inventario, sensores, pagos de prueba, idempotencia y transiciones se resuelven en código determinista. No hay un agente por canal o por API.
+El Concierge Agent mantiene la conversación y puede delegar a un especialista con un contrato interno tipado. El modelo puede interpretar la intención, comparar opciones o proponer una acción. El backend aplica las políticas de autorización y verifica confirmaciones, reglas de negocio e idempotencia antes de ejecutar una operación.
 
-La solicitud pasa por validación y permisos antes de ejecutar herramientas. Respuestas de herramientas y proveedores son datos no confiables y nunca pueden cambiar políticas. Se exige confirmación explícita para transacciones aplicables. Estado y memoria se limitan al contexto necesario y autorizado.
+Cada especialista recibe los campos y permisos mínimos para la operación. Las respuestas de herramientas y proveedores se validan y se tratan como datos. Las decisiones de autorización se aplican en el backend con independencia de lo que contenga una respuesta externa. El concierge solicita confirmación explícita al huésped cuando corresponda, y Human Handoff deriva a recepción las solicitudes que requieren intervención humana.
 
 ## Flujo de grafo previsto
 
-`normalize → resolve_active_stay → authorize → interpret/route → tool | confirm | escalate → format_response`
+`normalizar → resolver estancia → interpretar y enrutar → autorizar operación → delegar o escalar → responder`
 
-Los errores tipados conducen a respuesta segura o escalamiento; no se reintenta automáticamente una escritura sin idempotencia. La persistencia de checkpointer, retención y evaluación quedan para Fase 1/6.
+Si una operación requiere confirmación, el grafo pausa la ejecución y verifica la autorización al retomarla. Los errores tipados permiten informar al huésped o escalar según el caso. Las escrituras requieren idempotencia para admitir reintentos automáticos. [Orquestación](orchestration.md)
